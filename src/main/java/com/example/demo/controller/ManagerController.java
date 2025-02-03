@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-<<<<<<< HEAD
-=======
 @RestController
->>>>>>> main
 @RequestMapping("/api/managers")
 public class ManagerController {
 

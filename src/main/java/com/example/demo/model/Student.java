@@ -2,10 +2,7 @@ package com.example.demo.model;
 
 import com.example.demo.model.enums.Gender;
 import com.example.demo.model.others.Address;
-<<<<<<< HEAD
-=======
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
->>>>>>> main
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
@@ -53,10 +50,7 @@ public class Student {
     private LocalDateTime lastAccessDate;
 
     @ManyToMany
-<<<<<<< HEAD
-=======
     @JsonIgnoreProperties("students")
->>>>>>> main
     @JoinTable(
             name = "student_fp", // Nombre de la tabla intermedia
             joinColumns = @JoinColumn(name = "student_id"), // FK hacia Student
@@ -66,20 +60,12 @@ public class Student {
 
     //mappedBy = "student" apunta al campo en FCT que define la relación
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
-<<<<<<< HEAD
     private ArrayList<FCT> FCTS = new ArrayList<>();
-=======
-    private List<FCT> FCTS = new ArrayList<>();
->>>>>>> main
 
     public Student() {
     }
 
-<<<<<<< HEAD
-    public Student(String name, String surnames, String NIA, String NIF, String NUSS, List<String> phoneNumbers, String email, Address address, Gender gender, boolean visible, LocalDateTime registerDate, LocalDateTime lastAccessDate) {
-=======
-    public Student(String name, String surnames, String NIA, String NIF, String NUSS, List<String> phoneNumbers, String email, Address address, Gender gender) {
->>>>>>> main
+    public Student(String name, String surnames, String NIA, String NIF, String NUSS, List<String> phoneNumbers, String email, Address address, Gender gender, boolean visible, LocalDateTime lastAccessDate) {
         this.name = name;
         this.surnames = surnames;
         this.NIA = NIA;
@@ -89,14 +75,9 @@ public class Student {
         this.email = email;
         this.address = address;
         this.gender = gender;
-<<<<<<< HEAD
-        this.visible = visible;
-        this.registerDate = registerDate;
         this.lastAccessDate = lastAccessDate;
-=======
         this.visible = true;
         this.registerDate = LocalDateTime.now();
->>>>>>> main
     }
 
     public Long getId() {
@@ -202,8 +183,6 @@ public class Student {
     public List<FP> getStudentFPs() {
         return studentFPs;
     }
-<<<<<<< HEAD
-=======
 
     public void setPhoneNumbers(List<String> phoneNumbers) {
         this.phoneNumbers = phoneNumbers;
@@ -213,8 +192,7 @@ public class Student {
         this.studentFPs = studentFPs;
     }
 
-    public void setFCTS(List<FCT> FCTS) {
+    public void setFCTS(ArrayList<FCT> FCTS) {
         this.FCTS = FCTS;
     }
->>>>>>> main
 }

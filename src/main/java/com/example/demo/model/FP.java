@@ -1,10 +1,7 @@
 package com.example.demo.model;
 
 import com.example.demo.model.enums.FpFamily;
-<<<<<<< HEAD
-=======
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
->>>>>>> main
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -22,10 +19,7 @@ public class FP {
     private FpFamily fpFamily;
 
     @ManyToMany(mappedBy = "studentFPs")
-<<<<<<< HEAD
-=======
     @JsonIgnoreProperties("studentFPs")
->>>>>>> main
     private List<Student> students;
 
     public FP() {

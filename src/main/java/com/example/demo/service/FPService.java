@@ -1,13 +1,9 @@
 package com.example.demo.service;
 
 import com.example.demo.model.FP;
-<<<<<<< HEAD
 import com.example.demo.repository.FPRepository;
-=======
 import com.example.demo.model.Student;
-import com.example.demo.repository.FPRepository;
 import com.example.demo.repository.StudentRepository;
->>>>>>> main
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -17,17 +13,11 @@ import java.util.List;
 public class FPService {
 
     private final FPRepository fpRepository;
-<<<<<<< HEAD
-
-    public FPService(FPRepository fpRepository) {
-        this.fpRepository = fpRepository;
-=======
     private final StudentRepository studentRepository;
 
     public FPService(FPRepository fpRepository, StudentRepository studentRepository) {
         this.fpRepository = fpRepository;
         this.studentRepository = studentRepository;
->>>>>>> main
     }
 
     public List<FP> getAllFPs() {
@@ -53,8 +43,6 @@ public class FPService {
     public void deleteFP(Long id) {
         fpRepository.deleteById(id);
     }
-<<<<<<< HEAD
-=======
 
     public FP addStudentToFP(Long fpId, Long studentId) {
         FP fp = fpRepository.findById(fpId)
@@ -89,6 +77,4 @@ public class FPService {
         fpRepository.save(fp);
         studentRepository.save(student);
     }
->>>>>>> main
 }
-

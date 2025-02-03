@@ -1,10 +1,7 @@
 package com.example.demo.model;
 
 import com.example.demo.model.others.Address;
-<<<<<<< HEAD
-=======
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
->>>>>>> main
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 
@@ -33,17 +30,11 @@ public class Company {
     private String actividad;
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
-<<<<<<< HEAD
-    private List<Manager> managers = new ArrayList<>();
-
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
-=======
     @JsonIgnoreProperties("company")
     private List<Manager> managers = new ArrayList<>();
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("company")
->>>>>>> main
     private List<WorkCenter> workCenters = new ArrayList<>();
 
     public Company() {
