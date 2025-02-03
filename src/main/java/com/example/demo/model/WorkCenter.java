@@ -1,6 +1,10 @@
 package com.example.demo.model;
 
 import com.example.demo.model.others.Address;
+<<<<<<< HEAD
+=======
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+>>>>>>> main
 import jakarta.persistence.*;
 
 @Entity
@@ -15,6 +19,10 @@ public class WorkCenter {
 
     @ManyToOne
     @JoinColumn(name = "company_id")
+<<<<<<< HEAD
+=======
+    @JsonIgnoreProperties("workCenters")
+>>>>>>> main
     private Company company;
 
     @Embedded

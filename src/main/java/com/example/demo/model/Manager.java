@@ -1,5 +1,10 @@
 package com.example.demo.model;
 
+<<<<<<< HEAD
+=======
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+>>>>>>> main
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 
@@ -24,6 +29,10 @@ public class Manager {
 
     @ManyToOne
     @JoinColumn(name = "company_id", nullable = false)
+<<<<<<< HEAD
+=======
+    @JsonIgnoreProperties("managers")
+>>>>>>> main
     private Company company;
 
     public Manager() {

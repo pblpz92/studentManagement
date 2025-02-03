@@ -28,6 +28,12 @@ public class Teacher {
     @OneToMany
     private List<FCT> fct = new ArrayList<>();
 
+<<<<<<< HEAD
+=======
+    public Teacher() {
+    }
+
+>>>>>>> main
     public Teacher(String name, String surnames, String phoneNumber, String email) {
         this.name = name;
         this.surnames = surnames;
