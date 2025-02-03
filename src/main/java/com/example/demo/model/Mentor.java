@@ -14,7 +14,7 @@ public class Mentor {
     private Long id;
 
     @Column(nullable = false)
-    private String name;git
+    private String name;
 
     @Column(nullable = false)
     private String surnames;
