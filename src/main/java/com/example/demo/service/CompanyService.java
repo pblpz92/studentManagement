@@ -34,6 +34,7 @@ public class CompanyService {
         company.setName(companyDetails.getName());
         company.setCIF(companyDetails.getCIF());
         company.setPhoneNumber(companyDetails.getPhoneNumber());
+        company.setAddress(companyDetails.getAddress());
         return companyRepository.save(company);
     }
 

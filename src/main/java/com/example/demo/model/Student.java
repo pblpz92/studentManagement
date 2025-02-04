@@ -60,7 +60,7 @@ public class Student {
 
     //mappedBy = "student" apunta al campo en FCT que define la relación
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
-    private ArrayList<FCT> FCTS = new ArrayList<>();
+    private List<FCT> FCTS = new ArrayList<>();
 
     public Student() {
     }
@@ -184,12 +184,12 @@ public class Student {
         return studentFPs;
     }
 
-    public void setPhoneNumbers(List<String> phoneNumbers) {
-        this.phoneNumbers = phoneNumbers;
-    }
-
     public void setStudentFPs(List<FP> studentFPs) {
         this.studentFPs = studentFPs;
+    }
+
+    public void setPhoneNumbers(List<String> phoneNumbers) {
+        this.phoneNumbers = phoneNumbers;
     }
 
     public void setFCTS(ArrayList<FCT> FCTS) {
