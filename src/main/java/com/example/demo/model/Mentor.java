@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 
@@ -27,6 +28,7 @@ public class Mentor {
 
     @ManyToOne
     @JoinColumn(name = "company_id")
+    @JsonIgnoreProperties({"managers", "workCenters"})
     private Company company;
 
     @OneToMany
