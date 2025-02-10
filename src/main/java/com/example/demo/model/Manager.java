@@ -32,12 +32,11 @@ public class Manager {
     public Manager() {
     }
 
-    public Manager(String name, String surnames, String email, String phoneNumber, Company company) {
+    public Manager(String name, String surnames, String email, String phoneNumber) {
         this.name = name;
         this.surnames = surnames;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.company = company;
     }
 
     public Long getId() {
@@ -87,4 +86,6 @@ public class Manager {
     public void setCompany(Company company) {
         this.company = company;
     }
+
+
 }

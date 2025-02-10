@@ -109,7 +109,28 @@ public class Company {
         return managers;
     }
 
+    public List<Manager> addManager(Manager manager) {
+        this.managers.add(manager);
+        return managers;
+    }
+
+    public List<Manager> deleteManager(Manager manager) {
+        this.managers.remove(manager);
+        return managers;
+    }
+
     public List<WorkCenter> getWorkCenters() {
         return workCenters;
     }
+
+    public List<WorkCenter> addWorkCenter(WorkCenter workCenter) {
+        this.workCenters.add(workCenter);
+        return workCenters;
+    }
+
+    public List<WorkCenter> deleteWorkCenter (WorkCenter workCenter) {
+        this.workCenters.remove(workCenter);
+        return workCenters;
+    }
+
 }
