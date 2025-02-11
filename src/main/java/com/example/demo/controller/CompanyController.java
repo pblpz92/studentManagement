@@ -71,24 +71,24 @@ public class CompanyController {
         return ResponseEntity.noContent().build();
     }
 
-    /*
+
     @PostMapping("/{companyId}/workcenters")
     public ResponseEntity<WorkCenter> createWorkCenter(@PathVariable Long companyId, @RequestBody WorkCenter workCenter) {
-        Company company = companyService.getCompanyById(companyId);
-        return ResponseEntity.status(HttpStatus.CREATED).body(workCenterService.saveWorkCenter(workCenter));
+        WorkCenter savedWorkCenter = workCenterService.saveWorkCenter(workCenter, companyId);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedWorkCenter);
+
     }
+
 
     @PutMapping("/{companyId}/workcenters/{workCenterId}")
     public ResponseEntity<WorkCenter> updateWorkCenter(@PathVariable Long companyId, @PathVariable Long workCenterId, @RequestBody WorkCenter workCenterDetails) {
-        WorkCenter existingWorkCenter = workCenterService.getWorkCenterById(workCenterId);
-        WorkCenter updatedWorkCenter = workCenterService.updateWorkCenter(workCenterId, workCenterDetails);
+        WorkCenter updatedWorkCenter = workCenterService.updateWorkCenter(workCenterId, workCenterDetails, companyId);
         return ResponseEntity.ok(updatedWorkCenter);
     }
 
     @DeleteMapping("/{companyId}/workcenters/{workCenterId}")
     public ResponseEntity<Void> deleteWorkCenter(@PathVariable Long companyId, @PathVariable Long workCenterId) {
-        workCenterService.getWorkCenterById(workCenterId);
-        workCenterService.deleteWorkCenter(workCenterId);
+        workCenterService.deleteWorkCenter(workCenterId, companyId);
         return ResponseEntity.noContent().build();
-    }*/
+    }
 }

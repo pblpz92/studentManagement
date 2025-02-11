@@ -28,6 +28,7 @@ public class WorkCenterController {
         return ResponseEntity.ok(workCenterService.getWorkCenterById(id));
     }
 
+    /*
     @PostMapping
     public ResponseEntity<WorkCenter> saveWorkCenter(@RequestBody WorkCenter workCenter) {
         return ResponseEntity.status(HttpStatus.CREATED).body(workCenterService.saveWorkCenter(workCenter));
@@ -42,6 +43,6 @@ public class WorkCenterController {
     public ResponseEntity<Void> deleteWorkCenter(@PathVariable Long id) {
         workCenterService.deleteWorkCenter(id);
         return ResponseEntity.noContent().build();
-    }
+    }*/
 }
 

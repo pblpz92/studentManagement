@@ -25,9 +25,8 @@ public class WorkCenter {
     public WorkCenter() {
     }
 
-    public WorkCenter(String name, Company company, Address address) {
+    public WorkCenter(String name, Address address) {
         this.name = name;
-        this.company = company;
         this.address = address;
     }
 
