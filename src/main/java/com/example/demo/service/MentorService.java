@@ -5,6 +5,7 @@ import com.example.demo.repository.MentorRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -41,5 +42,16 @@ public class MentorService {
 
     public void deleteMentor(Long id) {
         mentorRepository.deleteById(id);
+    }
+
+    public List<String> getAllEmails() {
+        List<Mentor> mentors = mentorRepository.findAll();
+        List<String> emails = new ArrayList<>();
+
+        for (Mentor mentor : mentors) {
+            emails.add(mentor.getEmail());
+        }
+
+        return emails;
     }
 }

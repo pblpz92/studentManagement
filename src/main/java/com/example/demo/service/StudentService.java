@@ -5,6 +5,7 @@ import com.example.demo.repository.StudentRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -39,5 +40,16 @@ public class StudentService {
 
     public void deleteStudent(Long id) {
         studentRepository.deleteById(getStudentById(id).getId());
+    }
+
+    public List<String> getAllEmails() {
+        List<Student> students = studentRepository.findAll();
+        List<String> emails = new ArrayList<>();
+
+        for (Student student : students) {
+            emails.add(student.getEmail());
+        }
+
+        return emails;
     }
 }
