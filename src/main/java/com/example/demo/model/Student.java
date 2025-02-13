@@ -45,7 +45,7 @@ public class Student {
 
     private boolean visible;
 
-    private LocalDateTime registerDate;
+    private LocalDateTime registerDate = LocalDateTime.now();
 
     private LocalDateTime lastAccessDate;
 
@@ -65,7 +65,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(String name, String surnames, String NIA, String NIF, String NUSS, List<String> phoneNumbers, String email, Address address, Gender gender, boolean visible, LocalDateTime lastAccessDate) {
+    public Student(String name, String surnames, String NIA, String NIF, String NUSS, List<String> phoneNumbers, String email, Address address, Gender gender, boolean visible) {
         this.name = name;
         this.surnames = surnames;
         this.NIA = NIA;
@@ -76,8 +76,7 @@ public class Student {
         this.address = address;
         this.gender = gender;
         this.lastAccessDate = lastAccessDate;
-        this.visible = true;
-        this.registerDate = LocalDateTime.now();
+        this.visible = visible;
     }
 
     public Long getId() {

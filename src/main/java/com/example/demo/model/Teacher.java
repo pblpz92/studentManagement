@@ -1,8 +1,10 @@
 package com.example.demo.model;
 
+import com.example.demo.model.enums.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,14 +30,19 @@ public class Teacher {
     @OneToMany
     private List<FCT> fct = new ArrayList<>();
 
+    private LocalDateTime registerDate = LocalDateTime.now();
+
+    private Role role;
+
     public Teacher() {
     }
 
-    public Teacher(String name, String surnames, String phoneNumber, String email) {
+    public Teacher(String name, String surnames, String phoneNumber, String email, Role role) {
         this.name = name;
         this.surnames = surnames;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.role = role;
     }
 
     public Long getId() {
@@ -80,5 +87,21 @@ public class Teacher {
 
     public List<FCT> getFct() {
         return fct;
+    }
+
+    public LocalDateTime getRegisterDate() {
+        return registerDate;
+    }
+
+    public void setRegisterDate(LocalDateTime registerDate) {
+        this.registerDate = registerDate;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
